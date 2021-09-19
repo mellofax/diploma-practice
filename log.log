@@ -1,0 +1,19 @@
+2021-09-19 17:27:06,636 INFO S.Log [main] ====================WITHOUT=AUTORIZATION=TEST=STARTING=====================
+2021-09-19 17:27:07,099 INFO S.Log [main] Ad is successfully closed!
+2021-09-19 17:27:12,800 INFO S.Log [main] A new tab is open
+2021-09-19 17:27:12,878 INFO S.Log [main] The page is switched
+2021-09-19 17:27:32,028 INFO S.Log [main] Page is successfuly scrolled
+2021-09-19 17:27:32,822 INFO S.Log [main] Item was successfully added to basket!
+2021-09-19 17:27:38,690 INFO S.Log [main] Item was successfully deleted from basket!
+2021-09-19 17:27:38,766 INFO S.Log [main] The page is closed
+2021-09-19 17:27:38,798 INFO S.Log [main] The page is switched
+2021-09-19 17:27:42,247 INFO S.Log [main] A new tab is open
+2021-09-19 17:27:42,447 INFO S.Log [main] The page is switched
+2021-09-19 17:27:44,831 INFO S.Log [main] Page is successfuly scrolled
+2021-09-19 17:27:45,058 INFO S.Log [main] Item was successfully added to favorite!
+2021-09-19 17:27:45,130 INFO S.Log [main] The page is closed
+2021-09-19 17:27:45,145 INFO S.Log [main] The page is switched
+2021-09-19 17:27:45,236 INFO S.Log [main] Page is successfuly scrolled
+2021-09-19 17:27:52,151 INFO S.Log [main] Language was changed successfully!
+2021-09-19 17:27:56,433 INFO S.Log [main] The page is closed
+2021-09-19 17:27:56,433 INFO S.Log [main] ===========================================================================
