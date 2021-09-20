@@ -1,6 +1,6 @@
-package Pages.Aliexpress;
+package ForUI.Pages.Aliexpress;
 
-import Static.Log;
+import ForUI.Static.Log;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-import static Static.Page.*;
+import static ForUI.Static.Page.*;
 
 public class AliexpressHomePage extends AliexpressItemPage {
     WebDriver driver;
@@ -47,17 +47,10 @@ public class AliexpressHomePage extends AliexpressItemPage {
     }
 
     public int AddToFavoriteSomeItem(String item) {
-        try {
-            AdCloseButton1.click();
             FindInput1.sendKeys(" " + item + "\n");
             OpenNewTab(driver, SomeItem().getAttribute("href"));
             SwitchPage(driver);
             return super.AddToFavorite();
-        }catch (Exception e)
-        {
-            Log.getLogger().error(e.getMessage());
-            return -1;
-        }
     }
 
     public boolean CloseAd() {
@@ -67,8 +60,7 @@ public class AliexpressHomePage extends AliexpressItemPage {
 
     public String ChangeLanguage(){
         try {
-            List<WebElement> list = driver.findElements(By.cssSelector("a[class = 'next-dialog-close']"));
-            if (list.size() > 0)
+            if (AdCloseButton1.isDisplayed())
                 AdCloseButton1.click();
             ScrollPageToSomeElement(driver, SettingsButton);
             SettingsButton.click();

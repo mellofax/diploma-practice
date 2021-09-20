@@ -1,4 +1,4 @@
-package Account;
+package ForUI.Account;
 
 public class Account {
     private String login;

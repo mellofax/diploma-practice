@@ -1,7 +1,7 @@
-package DateBase;
+package ForUI.DateBase;
 
-import Account.Account;
-import Static.Log;
+import ForUI.Account.Account;
+import ForUI.Static.Log;
 
 import java.sql.*;
 

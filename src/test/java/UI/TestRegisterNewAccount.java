@@ -1,11 +1,11 @@
 package UI;
 
-import Account.Account;
-import DateBase.DBConnection;
-import Static.Log;
-import Pages.Aliexpress.AliexpressRegisterPage;
-import Pages.Mail.MailHomePage;
-import Pages.Mail.MailLoginPage;
+import ForUI.Account.Account;
+import ForUI.DateBase.DBConnection;
+import ForUI.Static.Log;
+import ForUI.Pages.Aliexpress.AliexpressRegisterPage;
+import ForUI.Pages.Mail.MailHomePage;
+import ForUI.Pages.Mail.MailLoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import jdk.jfr.Description;
 import org.openqa.selenium.WebDriver;
@@ -16,7 +16,7 @@ import org.testng.annotations.AfterGroups;
 import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.Test;
 
-import static Static.Page.*;
+import static ForUI.Static.Page.*;
 
 public class TestRegisterNewAccount {
 

@@ -1,8 +1,6 @@
 package UI;
-
-import Pages.Aliexpress.AliexpressItemPage;
-import Static.Log;
-import Pages.Aliexpress.AliexpressHomePage;
+import ForUI.Static.Log;
+import ForUI.Pages.Aliexpress.AliexpressHomePage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import jdk.jfr.Description;
 import org.openqa.selenium.WebDriver;
@@ -13,8 +11,8 @@ import org.testng.annotations.AfterGroups;
 import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.Test;
 
-import static Static.Page.ClosePage;
-import static Static.Page.SwitchPage;
+import static ForUI.Static.Page.ClosePage;
+import static ForUI.Static.Page.SwitchPage;
 
 public class TestsWithoutAutorization {
     WebDriver driver;

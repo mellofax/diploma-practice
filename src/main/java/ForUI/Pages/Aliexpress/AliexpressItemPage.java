@@ -1,6 +1,6 @@
-package Pages.Aliexpress;
+package ForUI.Pages.Aliexpress;
 
-import Static.Log;
+import ForUI.Static.Log;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,8 +8,8 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-import static Static.Page.ScrollPageToSomeElement;
-import static Static.Page.WaitSomeElementToVisibility;
+import static ForUI.Static.Page.ScrollPageToSomeElement;
+import static ForUI.Static.Page.WaitSomeElementToVisibility;
 
 public class AliexpressItemPage{
     WebDriver driver;

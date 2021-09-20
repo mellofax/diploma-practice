@@ -1,5 +1,6 @@
-package Static;
+package ForUI.Static;
 
+import ForUI.Static.Log;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

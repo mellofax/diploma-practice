@@ -19,6 +19,7 @@
         <allure.version>2.10.0</allure.version>
         <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
         <aspectj.version>1.9.6</aspectj.version>
+        <rest.version>4.4.0</rest.version>
     </properties>
     <dependencies>
 
@@ -26,6 +27,13 @@
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-testng</artifactId>
             <version>${allure.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${rest.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -66,6 +74,12 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>4.4.0</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

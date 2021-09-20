@@ -1,12 +1,12 @@
-package Pages.Aliexpress;
+package ForUI.Pages.Aliexpress;
 
-import Account.Account;
-import Static.Log;
+import ForUI.Account.Account;
+import ForUI.Static.Log;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static Static.Page.WaitSomeElementToVisibility;
+import static ForUI.Static.Page.WaitSomeElementToVisibility;
 
 public class AliexpressRegisterPage {
     WebDriver driver;

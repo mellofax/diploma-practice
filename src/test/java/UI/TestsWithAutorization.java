@@ -1,10 +1,10 @@
 package UI;
 
-import Account.Account;
-import DateBase.DBConnection;
-import Pages.Aliexpress.AliexpressHomePage;
-import Pages.Aliexpress.AliexpressLoginPage;
-import Static.Log;
+import ForUI.Account.Account;
+import ForUI.DateBase.DBConnection;
+import ForUI.Pages.Aliexpress.AliexpressHomePage;
+import ForUI.Pages.Aliexpress.AliexpressLoginPage;
+import ForUI.Static.Log;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import jdk.jfr.Description;
 import org.openqa.selenium.WebDriver;
@@ -15,8 +15,8 @@ import org.testng.annotations.AfterGroups;
 import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.Test;
 
-import static Static.Page.ClosePage;
-import static Static.Page.SwitchPage;
+import static ForUI.Static.Page.ClosePage;
+import static ForUI.Static.Page.SwitchPage;
 
 public class TestsWithAutorization {
     WebDriver driver;
