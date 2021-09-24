@@ -15,16 +15,16 @@ public class MilestonePage extends ProjectPage{
         this.milestone = milestone;
     }
     @Override
-    public void Create()
-    {
+    public void Create() {
         given().baseUri(BASE_URI).header("Token", TOKEN).when().body(milestone).post("milestone/" + project.getCode()).then().statusCode(200);
     }
+
     @Override
-    public Response GetAll()
-    {
+    public Response GetAll() {
         Response response = given().baseUri(BASE_URI).header("Token", TOKEN).when().get("milestone/" + project.getCode()).then().statusCode(200).contentType(ContentType.JSON).extract().response();
         return response;
     }
+
     public Response DeleteSuite() {
         given().baseUri(BASE_URI).header("Token", TOKEN).when().delete("milestone/" + project.getCode() +"/"+ 1).then().statusCode(200);
         return GetAll();

@@ -45,19 +45,16 @@ public class AliexpressHomePage extends AliexpressItemPage {
         SwitchPage(driver);
         return super.AddToBasket();
     }
-
     public int AddToFavoriteSomeItem(String item) {
             FindInput1.sendKeys(" " + item + "\n");
             OpenNewTab(driver, SomeItem().getAttribute("href"));
             SwitchPage(driver);
             return super.AddToFavorite();
     }
-
     public boolean CloseAd() {
         AdCloseButton.click();
         return FindInput.isEnabled();
     }
-
     public String ChangeLanguage(){
         try {
             if (AdCloseButton1.isDisplayed())
@@ -76,7 +73,6 @@ public class AliexpressHomePage extends AliexpressItemPage {
             return "error";
         }
     }
-
 
     private WebElement SomeItem() {
         List<WebElement> list = driver.findElements(By.cssSelector("a[class = 'item-title'"));

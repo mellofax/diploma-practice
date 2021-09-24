@@ -24,6 +24,7 @@ public class MailLoginPage {
     public MailLoginPage(WebDriver driver) {
         this.driver = driver;
     }
+
     public boolean Login(Account account) {
         try {
             login.sendKeys(account.getLogin());

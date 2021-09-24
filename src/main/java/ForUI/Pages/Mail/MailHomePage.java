@@ -18,8 +18,7 @@ public class MailHomePage {
         this.driver = driver;
     }
 
-    public boolean FindMessage()
-    {
+    public boolean FindMessage() {
         try {
             WaitSomeElementToVisibility(driver, VerificationMessage, 25);
             VerificationMessage.click();

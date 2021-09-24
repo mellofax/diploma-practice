@@ -1,6 +1,4 @@
 package ForUI.Static;
-
-import ForUI.Static.Log;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,8 +6,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Page {
-    private static WebDriverWait wait = null;
-
     public static void SwitchPage(WebDriver driver) {
         for(String tab : driver.getWindowHandles())
             driver.switchTo().window(tab);
@@ -27,12 +23,8 @@ public class Page {
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();" , element);
         Log.getLogger().info("Page is successfuly scrolled");
     }
-    public static void WaitSomeElementToClick(WebDriver driver, WebElement element, int time) {
-        wait = new WebDriverWait(driver, time);
-        wait.until(ExpectedConditions.elementToBeClickable(element)).click();
-    }
     public static void WaitSomeElementToVisibility(WebDriver driver, WebElement element, int time){
-        wait = new WebDriverWait(driver, time);
+        WebDriverWait wait = new WebDriverWait(driver, time);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
     public static void ClosePage(WebDriver driver){

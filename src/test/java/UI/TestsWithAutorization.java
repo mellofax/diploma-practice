@@ -24,8 +24,7 @@ public class TestsWithAutorization {
     AliexpressHomePage aliexpressHomePage;
 
     @BeforeGroups(groups = "TestsWithAuthorization")
-    public void SetUp()
-    {
+    public void SetUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get("https://login.aliexpress.ru/?return_url=https%3A%2F%2Fbest.aliexpress.ru%2F%3Flan%3Den");
@@ -33,14 +32,15 @@ public class TestsWithAutorization {
         DBConnection connection = new DBConnection();
         account = connection.GetAliexpressAccount();
     }
+
     @Test(groups = "TestsWithAuthorization", priority = 1)
     @Description("Login on aliexpress")
-    public void LoginOnAliexpress()
-    {
+    public void LoginOnAliexpress() {
         AliexpressLoginPage aliexpressLoginPage = PageFactory.initElements(driver, AliexpressLoginPage.class);
         Assert.assertTrue(aliexpressLoginPage.Login(account));
         Log.getLogger().info("Authorization is successful!");
     }
+
     @Test(groups = "TestsWithAuthorization", priority = 2)
     @Description("close ad on ALIEXPRESS test")
     public void CloseAdTest() {
@@ -48,6 +48,7 @@ public class TestsWithAutorization {
         Assert.assertTrue(aliexpressHomePage.CloseAd());
         Log.getLogger().info("Ad is successfully closed!");
     }
+
     @Test(groups = "TestsWithAuthorization", priority = 3)
     @Description("add to basket some item on ALIEXPRESS test")
     public void AddItemToBasketTest() throws InterruptedException {

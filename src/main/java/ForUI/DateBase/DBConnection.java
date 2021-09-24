@@ -65,7 +65,6 @@ public class DBConnection {
         }
         return account;
     }
-
     private void CloseConnection() {
         try {
             con.close();

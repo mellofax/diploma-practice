@@ -28,6 +28,7 @@ public class AliexpressRegisterPage {
     public AliexpressRegisterPage(WebDriver driver) {
         this.driver = driver;
     }
+
     public boolean InsertInfo(Account account) {
         try {
             RegisterButton.click();
@@ -52,8 +53,7 @@ public class AliexpressRegisterPage {
             return false;
         }
     }
-    public boolean CompleteRegistration()
-    {
+    public boolean CompleteRegistration() {
         CreateAccountButton.click();
         WaitSomeElementToVisibility(driver, SuccessCreate, 10);
         return SuccessCreate.isDisplayed();

@@ -40,7 +40,6 @@ public class AliexpressItemPage{
         WaitSomeElementToVisibility(driver, ToBasketButton, 5);
         return ToBasketButton.isDisplayed();
     }
-
     public boolean DeleteItem() {
         ToBasketButton.click();
         DeleteItemButton.click();
@@ -48,7 +47,6 @@ public class AliexpressItemPage{
         WaitSomeElementToVisibility(driver, BasketText, 5);
         return BasketText.isDisplayed();
     }
-
     public int AddToFavorite() {
         try
         {
@@ -62,7 +60,6 @@ public class AliexpressItemPage{
             return -1;
         }
     }
-
     public int GetCountOfFavoritesAfterAdd() {
         AddToFavoriteButton.click();
         return Integer.parseInt(AddToFavoriteButton.getText());

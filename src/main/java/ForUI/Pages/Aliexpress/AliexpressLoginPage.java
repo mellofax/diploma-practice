@@ -24,8 +24,7 @@ public class AliexpressLoginPage {
         this.driver = driver;
     }
 
-    public boolean Login(Account account)
-    {
+    public boolean Login(Account account) {
         EmailInput.sendKeys(account.getLogin());
         PasswordInput.sendKeys(account.getPassword());
         LoginButton.click();

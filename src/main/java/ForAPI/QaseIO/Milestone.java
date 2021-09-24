@@ -5,8 +5,7 @@ import java.util.Locale;
 public class Milestone {
     private String title;
     private String description;
-    public Milestone(String title, String description)
-    {
+    public Milestone(String title, String description) {
         this.title = title;
         this.description = description;
     }
