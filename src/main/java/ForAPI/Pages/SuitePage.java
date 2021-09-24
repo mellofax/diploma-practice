@@ -15,18 +15,20 @@ public class SuitePage extends ProjectPage{
         this.suite = suite;
     }
 
-    public void CreateSuite()
+    @Override
+    public void Create()
     {
         given().baseUri(BASE_URI).header("Token", TOKEN).when().body(suite).post("suite/" + project.getCode()).then().statusCode(200);
     }
-    public Response GetSuites()
+    @Override
+    public Response GetAll()
     {
         Response response = given().baseUri(BASE_URI).header("Token", TOKEN).when().get("suite/" + project.getCode()).then().statusCode(200).contentType(ContentType.JSON).extract().response();
         return response;
     }
 
     public Response DeleteSuite() {
-        given().baseUri(BASE_URI).header("Token", TOKEN).when().delete("suite/" + project.getCode() +"/"+ suite.getParetn_id()).then().statusCode(200);
-        return GetSuites();
+        given().baseUri(BASE_URI).header("Token", TOKEN).when().delete("suite/" + project.getCode() +"/"+ suite.getParent_id()).then().statusCode(200);
+        return GetAll();
     }
 }

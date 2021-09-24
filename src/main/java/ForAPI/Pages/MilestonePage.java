@@ -14,17 +14,19 @@ public class MilestonePage extends ProjectPage{
         super(project);
         this.milestone = milestone;
     }
-    public void CreateMilestone()
+    @Override
+    public void Create()
     {
         given().baseUri(BASE_URI).header("Token", TOKEN).when().body(milestone).post("milestone/" + project.getCode()).then().statusCode(200);
     }
-    public Response GetMilestones()
+    @Override
+    public Response GetAll()
     {
         Response response = given().baseUri(BASE_URI).header("Token", TOKEN).when().get("milestone/" + project.getCode()).then().statusCode(200).contentType(ContentType.JSON).extract().response();
         return response;
     }
     public Response DeleteSuite() {
         given().baseUri(BASE_URI).header("Token", TOKEN).when().delete("milestone/" + project.getCode() +"/"+ 1).then().statusCode(200);
-        return GetMilestones();
+        return GetAll();
     }
 }

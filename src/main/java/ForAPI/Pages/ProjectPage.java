@@ -15,11 +15,11 @@ public class ProjectPage {
         this.project = project;
     }
 
-    public void CreateProject()
+    public void Create()
     {
         given().baseUri(BASE_URI).header("Token", TOKEN).when().body(project).post("project").then().statusCode(200);
     }
-    public Response GetProjects()
+    public Response GetAll()
     {
         Response response = given().baseUri(BASE_URI).header("Token", TOKEN).when().get("project").then().statusCode(200).contentType(ContentType.JSON).extract().response();
         return response;

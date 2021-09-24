@@ -5,7 +5,6 @@ import ForAPI.Pages.ProjectPage;
 import ForAPI.Pages.SuitePage;
 import ForAPI.QaseIO.Milestone;
 import ForAPI.QaseIO.Project;
-import ForAPI.QaseIO.SharedStep;
 import ForAPI.QaseIO.Suite;
 import ForUI.Static.Log;
 import jdk.jfr.Description;
@@ -14,14 +13,11 @@ import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.Test;
 import org.testng.Assert;
 
-import static io.restassured.RestAssured.given;
-
 public class Tests {
 
     private Project project;
     private Suite suite;
     private Milestone milestone;
-    private SharedStep sharedStep;
 
     private ProjectPage projectPage;
     private SuitePage suitePage;
@@ -32,7 +28,6 @@ public class Tests {
         project = new Project("some", "true");
         suite = new Suite("Name", 1, "des", "prec");
         milestone = new Milestone("milestone", "description");
-        sharedStep = new SharedStep("fsd");
         Log.getLogger().info("============================API=TESTS=STARTING===========================");
     }
 
@@ -40,13 +35,13 @@ public class Tests {
     @Description("Create project")
     public void CreateProjectTest() {
         projectPage = new ProjectPage(project);
-        projectPage.CreateProject();
+        projectPage.Create();
     }
 
     @Test(groups = "ApiTESTS", priority = 2)
     @Description("Get project")
     public void GetProjectTest() {
-        Assert.assertTrue(projectPage.GetProjects().asString().contains(project.getTitle()));
+        Assert.assertTrue(projectPage.GetAll().asString().contains(project.getTitle()));
         Log.getLogger().info("Project " + project.getTitle() + " successfully created!");
     }
 
@@ -54,13 +49,13 @@ public class Tests {
     @Description("Create suite")
     public void CreateSuiteTest() {
         suitePage = new SuitePage(project, suite);
-        suitePage.CreateSuite();
+        suitePage.Create();
     }
 
     @Test(groups = "ApiTESTS", priority = 4)
     @Description("Get suite")
     public void GetSuiteTest() {
-        Assert.assertTrue(suitePage.GetSuites().asString().contains(suite.getTitle()));
+        Assert.assertTrue(suitePage.GetAll().asString().contains(suite.getTitle()));
         Log.getLogger().info("Suite " + suite.getTitle() + " successfully created!");
     }
 
@@ -75,13 +70,13 @@ public class Tests {
     @Description("Create milestone ")
     public void CreateMilestoneTest() {
         milestonePage = new MilestonePage(project, milestone);
-        milestonePage.CreateMilestone();
+        milestonePage.Create();
     }
 
     @Test(groups = "ApiTESTS", priority = 7)
     @Description("Get milestone")
     public void GetMilestoneTest() {
-        Assert.assertTrue(milestonePage.GetMilestones().asString().contains(milestone.getTitle()));
+        Assert.assertTrue(milestonePage.GetAll().asString().contains(milestone.getTitle()));
         Log.getLogger().info("Suite " + milestone.getTitle() + " successfully created!");
     }
 
