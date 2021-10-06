@@ -8,7 +8,7 @@ import static io.restassured.RestAssured.given;
 public class ProjectPage {
 
     protected String BASE_URI = "https://api.qase.io/v1";
-    protected String TOKEN = "bc16b53c3c1747ac0c23b3041f2f670d2fd08b20";
+    protected String TOKEN = "8aee68308271ee5608516645ebfff51d1fe31240";
     protected  Project project;
 
     public ProjectPage(Project project) {

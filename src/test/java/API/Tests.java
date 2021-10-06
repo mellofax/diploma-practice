@@ -1,6 +1,7 @@
 package API;
 
 import ForAPI.Pages.MilestonePage;
+import ForAPI.Pages.ProjectGenerator;
 import ForAPI.Pages.ProjectPage;
 import ForAPI.Pages.SuitePage;
 import ForAPI.QaseIO.Milestone;
@@ -12,6 +13,8 @@ import org.testng.annotations.AfterGroups;
 import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.Test;
 import org.testng.Assert;
+
+import static ForAPI.Pages.ProjectGenerator.GenerateName;
 
 public class Tests {
 
@@ -25,7 +28,7 @@ public class Tests {
 
     @BeforeGroups(groups = "ApiTESTS")
     public void SetUp() {
-        project = new Project("some", "true");
+        project = new Project(GenerateName(4), "true");
         suite = new Suite("Name", 1, "des", "prec");
         milestone = new Milestone("milestone", "description");
         Log.getLogger().info("============================API=TESTS=STARTING===========================");

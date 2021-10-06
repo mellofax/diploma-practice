@@ -29,7 +29,7 @@ public class DBConnection {
     public Account GetEmailAccount() {
         try {
             Account account = null;
-            ResultSet result = statement.executeQuery("SELECT Login,Password FROM list WHERE Type='Mail'");
+                ResultSet result = statement.executeQuery("SELECT Login,Password FROM list WHERE Type='Mail'");
             String login = null;
             String pass = null;
             while(result.next())

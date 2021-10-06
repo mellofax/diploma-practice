@@ -25,23 +25,32 @@ public class AliexpressRegisterPage {
     @FindBy(css = "button[class = 'ali-kit_Button__button__ngexmt ali-kit_Button__size-m__ngexmt contained ali-kit_Button__default__ngexmt CouponPopup_CouponPopup__closeButton__1y0kf']")
     private WebElement SuccessCreate;
 
+    @FindBy(css = "span[class='fm-error-tip']")
+    private WebElement ErrorMessage;
+
     public AliexpressRegisterPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public boolean InsertInfo(Account account) {
+    public boolean Register(Account account) {
         try {
             RegisterButton.click();
             EmailInput.sendKeys(account.getLogin());
             PasswordInput.sendKeys(account.getPassword());
             CreateAccountButton.click();
             return true;
-        }
-        catch (Exception e)
+        }catch (Exception e)
         {
             Log.getLogger().error(e.getMessage());
             return false;
         }
+
+    }
+    public String Register(String login, String password) {
+        EmailInput.sendKeys(login);
+        PasswordInput.sendKeys(password);
+        WaitSomeElementToVisibility(driver, ErrorMessage, 2);
+        return ErrorMessage.getText();
     }
     public boolean InsertVerificationPassword(String password) {
         try {
